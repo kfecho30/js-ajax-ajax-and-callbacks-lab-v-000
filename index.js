@@ -22,8 +22,18 @@ function displayResults(data){
   $('#results').html(list)
 }
 
-function showCommits() {
+function showCommits(el) {
+  const repo = el.dataset
+  $.get(`https://api.github.com/repos/${repo.owner}/${repo.respository}/commits`).done(displayCommits).fail(displayError)
+}
 
+function displayCommits(data) {
+  const commits = data.map(commit => {
+    return (`
+      <h2>SHA: ${commit.tree.sha}</h2>
+      `)
+  });
+  $('#details').html(commits)
 }
 
 function displayError(){
