@@ -11,7 +11,7 @@ function displayResults(data){
     return (`<h2>${item.name}</h2><br>
               <p>${item.description}</p>
               <a href="${item.html_url}">Check It Out</a>
-              <a href="#" onclick='showCommits(this)'>Show Commits</a>
+              <a href="#" data-owner="${item.owner.login}" data-repository="${item.name}" onclick='showCommits(this)'>Show Commits</a>
               <div class='owner-info'>
                 <h4>${item.owner.login}</h4>
                 <img src='${item.owner.avatar_url}'/><br>
