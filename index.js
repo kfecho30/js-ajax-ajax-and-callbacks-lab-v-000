@@ -24,7 +24,7 @@ function displayResults(data){
 
 function showCommits(el) {
   const repo = el.dataset
-  $.get(`https://api.github.com/repos/${el.dataset.owner}/${el.dataset.respository}/commits`).done(displayCommits).fail(displayError)
+  $.get(`https://api.github.com/repos/${el.dataset.owner}/${el.dataset.repository}/commits`).done(displayCommits).fail(displayError)
 }
 
 function displayCommits(data) {
