@@ -30,7 +30,9 @@ function showCommits(el) {
 function displayCommits(data) {
   const commits = data.map(commit => {
     return (`
-      <h2>SHA: ${commit.tree.sha}</h2>
+      <h2>SHA: ${commit.sha}</h2>
+      <p>Author: ${commit.author.name}</p>
+      <p>Login: ${commit.author.login}</p>
       `)
   });
   $('#details').html(commits)
