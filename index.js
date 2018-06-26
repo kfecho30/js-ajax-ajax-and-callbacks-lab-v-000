@@ -31,8 +31,9 @@ function displayCommits(data) {
   const commits = data.map(commit => {
     return (`
       <h2>SHA: ${commit.sha}</h2>
-      <p>Author: ${commit.author.name}</p>
+      <p>Author: ${commit.commit.author.name}</p>
       <p>Login: ${commit.author.login}</p>
+      <img src="${commit.author.avatar_url}"/>
       `)
   });
   $('#details').html(commits)
