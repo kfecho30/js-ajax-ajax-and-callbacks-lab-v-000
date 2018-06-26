@@ -3,7 +3,7 @@ $(document).ready(function (){
 
 function searchRepositories() {
   let terms = $("#searchTerms").val();
-  let url = `https://api.github.com/search/repositoopsories?q=${terms}`
+  let url = `https://api.github.com/search/repositories?q=${terms}`
   $.get(url).done(displayResults).fail(displayError)
 }
 function displayResults(data){
